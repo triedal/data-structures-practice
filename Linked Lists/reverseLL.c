@@ -34,13 +34,13 @@ void freeList(Node *head)
   }
 }
 
-Node* reverseList(Node *first)
+Node* reverseList(Node *head)
 {
-  if(first == NULL) return NULL;
-  if(first->next == NULL) return first;
-  Node* rest = reverseList(first->next);
-  first->next->next = first;
-  first->next = NULL;
+  if(head == NULL) return NULL;
+  if(head->next == NULL) return head;
+  Node* rest = reverseList(head->next);
+  head->next->next = head;
+  head->next = NULL;
   return rest;
 }
 
